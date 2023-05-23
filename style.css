@@ -1,0 +1,10 @@
+.strike-through{
+    text-decoration: line-through;
+}
+.card-image{
+    height: 11rem;
+    width: 13rem;
+}
+.btn{
+    background-color: #eb4747;
+}
