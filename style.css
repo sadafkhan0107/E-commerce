@@ -15,10 +15,20 @@
 }
 
 
-
-
-.strike-through{
+.price-strike-through{
     text-decoration: line-through;
+}
+
+.d-flex{
+    display:flex;
+}
+
+.align-end{
+    align-items: end;
+}
+
+.gap-sm{
+    gap: 18px;
 }
 
 
