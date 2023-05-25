@@ -6,10 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Ecom App</title>
     <meta name="authro" description="Sadaf Khan">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div id="products"></div>
+    <header class="heading d-flex grow-shrink-basis align-center">
+        <div class="heading-title-icon d-flex grow-shrink-basis align-center">
+            <h1 class="heading-title">
+                <a class="link" href=".">Ecomm App</a>
+            </h1>
+        </div>
+        <nav>
+            <ul class="list-not-bullet">
+                <li class="list-item-inline">
+                    <a href="/" class="link-cursor">Home</a>
+                </li>
+                <li class="list-not-bullet">
+                    <a href="/" class="link-cursor">
+                        <span class="material-icons-outlined">
+                        favorite_border
+                        </span>
+                    </a>
+                </li>
+                <li class="list-not-bullet">
+                    <a href="/" class="link-cursor">
+                        <span class="material-icons-outlined">
+                            shopping_cart
+                            </span>
+                            Cart</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div id="products" class="d-flex wrap gap"></div>
     <script type="module" src="./index.js"></script>
 </body>
 </html>

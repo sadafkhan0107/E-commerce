@@ -1,17 +1,15 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons+Outlined");
 
-:root{
+ :root{
     --primary-color: #334155;
     --background-color: rgb(248, 248, 213);
-
-}
+    max-width: 100%;
+} 
 
 .card{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    border: 1px solid grey;
+    /* display: flex; */
+    border: 1px solid grey;  
 }
 
 
@@ -21,16 +19,28 @@
 
 .d-flex{
     display:flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-.align-end{
+/* .align-end{
     align-items: end;
-}
+} */
 
 .gap-sm{
-    gap: 18px;
+    gap: 8px;
 }
 
+.cta-button{
+    background-color: orange;
+}
 
-
-
+.heading{
+    background-color: orangered;
+    color: white;
+    text-decoration: none;
+}
+.link .link-cursor{
+    color: white;
+    text-decoration: none;
+}

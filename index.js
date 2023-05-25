@@ -45,7 +45,7 @@ for(let product of products){
 
         /**Product price */
         const price = document.createElement("p");
-        price.classList.add("card-price d-flex align-end gap-sm");
+        price.classList.add("card-price", "gap-sm");
         price.innerText = `Rs.${product.newPrice}`;
 
         /**Product old price */
