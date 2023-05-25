@@ -37,10 +37,38 @@
 
 .heading{
     background-color: orangered;
-    color: white;
-    text-decoration: none;
+    width: 100%;
 }
-.link .link-cursor{
+.list-not-bullet{
+    list-style-type: none;
+}
+.list-item-inline{
+    display: inline;
+    padding: 8px;
+}
+
+.nav-menu{
+    margin-left: auto;
+}
+
+
+
+a:link { 
+    text-decoration: none; 
     color: white;
-    text-decoration: none;
+}
+
+
+a:visited { text-decoration: none;
+    color: white;
+ }
+
+
+a:hover { text-decoration: none;
+    color: white;
+ }
+
+
+a:active { text-decoration: none; 
+    color: white;
 }
