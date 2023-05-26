@@ -126,12 +126,11 @@ productContainer.addEventListener("click" , (event) =>
     if(!isProductInCart){
         const productToAddToCart = products.filter(({_id}) => _id === event.target.dataset.id);
     cart = [...cart, ...productToAddToCart];
-
     const cartButton = event.target;
     cartButton.innerHTML = 
      `GO TO Cart <span class = 'material-icons-outlined'>shopping_cart</span>`;
-    }else{
-        location.href = "./cart.html";
     }
-    
+    else{
+        location.href = "./cart.html";
+    }   
 });
