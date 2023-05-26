@@ -1,6 +1,12 @@
 import { products } from "./db/products.js";
 
 const productContainer = document.getElementById("products");
+let cart = [];
+
+const findProductInCart = (cart, prodId) => {
+    const isProductInCart = cart && cart.length > 0 && cart.some(({_id}) => _id === prodId);
+    return isProductInCart;
+}
 
 for(let product of products){
     const cardContainer = document.createElement("div");
@@ -10,7 +16,7 @@ for(let product of products){
         "d-flex", 
         "direction-column", 
         "relative",
-        "shadow"
+        "shadow",
         );
         
         /* Image Container */
@@ -45,8 +51,8 @@ for(let product of products){
 
         /**Product price */
         const price = document.createElement("p");
-        price.classList.add("card-price", "gap-sm");
-        price.innerText = `Rs.${product.newPrice}`;
+        price.classList.add("card-price");
+        price.innerText = `Rs.${product.newPrice}      `;
 
         /**Product old price */
         const oldPrice = document.createElement("span");
@@ -57,7 +63,7 @@ for(let product of products){
         /**Discount */
         const discount = document.createElement("span");
         discount.classList.add("discount");
-        discount.innerText = `(${product.discount}% OFF)`;
+        discount.innerText = `      (${product.discount}% OFF)`;
         price.appendChild(discount);
 
         descriptionContainer.appendChild(price);
@@ -96,6 +102,7 @@ for(let product of products){
             "cursor",
             "btn-margin"
             );
+            cartButton.setAttribute("data_id", product._id)
             const cart= document.createElement("span");
             cart.classList.add("material-icons-outlined");
             cart.innerText = "shopping_cart";
@@ -113,3 +120,18 @@ for(let product of products){
 
         productContainer.appendChild(cardContainer);
 }
+productContainer.addEventListener("click" , (event) =>
+{   
+    const isProductInCart = findProductInCart(cart, event.target.dataset.id);
+    if(!isProductInCart){
+        const productToAddToCart = products.filter(({_id}) => _id === event.target.dataset.id);
+    cart = [...cart, ...productToAddToCart];
+
+    const cartButton = event.target;
+    cartButton.innerHTML = 
+     `GO TO Cart <span class = 'material-icons-outlined'>shopping_cart</span>`;
+    }else{
+        location.href = "./cart.html";
+    }
+    
+});
