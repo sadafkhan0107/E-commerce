@@ -1,4 +1,5 @@
 import { products } from "./db/products.js";
+import { createProductsCart } from "./createProductCart.js";
 
 const productContainer = document.getElementById("products");
 let cart = [];
