@@ -1,3 +1,7 @@
 import { createProductsCart } from "./createProductCart.js";
 
-const productContainer = document.getElementById("cart");
+const cartContainer = document.getElementById("cart");
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+createProductsCart(cart, cartContainer);

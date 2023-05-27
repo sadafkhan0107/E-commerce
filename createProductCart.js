@@ -92,7 +92,7 @@ export const createProductsCart = (products, parentElement) =>{
                 "gap",
                 "btn-margin"
                 );
-                cartButton.setAttribute("data_id", product._id)
+                cartButton.setAttribute("data-id", product._id)
                 const cart= document.createElement("span");
                 cart.classList.add("material-icons-outlined");
                 cart.innerText = "shopping_cart";
