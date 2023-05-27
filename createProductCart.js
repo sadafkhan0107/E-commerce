@@ -1,4 +1,4 @@
-export const createProductsCart = (products, productContainer) =>{
+export const createProductsCart = (products, parentElement) =>{
     for(let product of products){
         const cardContainer = document.createElement("div");
         cardContainer.classList.add(
@@ -90,7 +90,6 @@ export const createProductsCart = (products, productContainer) =>{
                 "align-center",
                 "justify-center",
                 "gap",
-                "cursor",
                 "btn-margin"
                 );
                 cartButton.setAttribute("data_id", product._id)
@@ -109,6 +108,6 @@ export const createProductsCart = (products, productContainer) =>{
             cardContainer.appendChild(imageContainer);
             cardContainer.appendChild(cardDetailsContainer);
     
-            productContainer.appendChild(cardContainer);
+            parentElement.appendChild(cardContainer);
     }
 }
