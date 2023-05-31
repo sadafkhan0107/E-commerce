@@ -1,3 +1,8 @@
+const findProductInCart = (cart, prodId) => {
+    const isProductInCart = cart && cart.length > 0 && cart.some(({_id}) => _id === prodId);
+    return isProductInCart;
+}
+
 export const createProductsCart = (products, parentElement) =>{
     for(let product of products){
         const cardContainer = document.createElement("div");
@@ -95,11 +100,14 @@ export const createProductsCart = (products, parentElement) =>{
                 cartButton.setAttribute("data-id", product._id)
                 const cart= document.createElement("span");
                 cart.classList.add("material-icons-outlined");
+                cart.setAttribute("data-id", product._id)
                 cart.innerText = "shopping_cart";
                 cartButton.appendChild(cart);
     
                 const buttonText= document.createElement("span");
-                buttonText.innerText= "Add to Cart";
+                const isProductInCart = findProductInCart(JSON.parse(localStorage.getItem("cart")), product._id)
+                buttonText.innerText= isProductInCart ? "Go To Cart" : "Add to Cart";
+                buttonText.setAttribute("data-id", product._id)
                 cartButton.appendChild(buttonText);
     
                 ctaButton.appendChild(cartButton);
